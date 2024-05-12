@@ -1,0 +1,17 @@
+name: Scheduled API Call
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'  # 每10分钟触发一次
+
+jobs:
+  call-api:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Make POST request
+        run: |
+          curl -X POST \
+          -H "Content-Type: application/json" \
+          -d '{"msg_type": "text", "content": {"text": "测试asdasdasd"}}' \
+          https://api.example.com/endpoint  # 修改为你的API端点
