@@ -5,7 +5,7 @@ name: Test
 # Controls when the workflow will run
 on:
   schedule:
-    - cron: '*/6 * * * *'  # 每10分钟触发一次
+    - cron: '0 11 * * *'  # 每10分钟触发一次
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
