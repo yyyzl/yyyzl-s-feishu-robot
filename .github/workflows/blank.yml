@@ -2,7 +2,7 @@ name: Scheduled API Call
 
 on:
   schedule:
-    - cron: '*/10 * * * *'  # 每10分钟触发一次
+    - cron: '*/3 * * * *'  # 每10分钟触发一次
 
 jobs:
   call-api:
@@ -14,4 +14,4 @@ jobs:
           curl -X POST \
           -H "Content-Type: application/json" \
           -d '{"msg_type": "text", "content": {"text": "测试asdasdasd"}}' \
-          https://api.example.com/endpoint  # 修改为你的API端点
+          https://open.feishu.cn/open-apis/bot/v2/hook/9b72844b-5eee-42de-bd81-cfea2e99593c  # 修改为你的API端点
