@@ -33,11 +33,27 @@ def send_feishu_msg(msg):
     feishu_url = os.environ["WEBHOOK"]  # 因为$前面是大写所以也是大写
 
     data = {
-        "msg_type": "text",
-        "content": {
-            "text": msg
-        }
-    }
+	"msg_type": "post",
+	"content": {
+		"post": {
+			"zh_cn": {
+				"title": "天气情况通知",
+				"content": [
+					[{
+							"tag": "text",
+							"text": msg
+						},
+						{
+							"tag": "a",
+							"text": "请查看",
+							"href": "https://www.baidu.com/s?wd=%E5%A4%A9%E6%B0%94"
+						}
+					]
+				]
+			}
+		}
+	}
+}
 
     response = requests.post(feishu_url, json=data)
 
